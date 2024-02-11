@@ -1,5 +1,6 @@
 ---
-
+const languages = ['HTML', 'CSS', 'Excel'];
+const zero = 0;
 ---
 
 <html lang="en">
@@ -9,6 +10,19 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+		<style>
+			body {
+				background-color: #222;
+				color: white;
+			}
+			h1 {
+				color: purple;
+				font-size: 36px;
+			}
+			.skillz {
+				color: #6667ab;
+			}
+		</style>
 	</head>
 	<body>
     <nav>
@@ -17,5 +31,10 @@
       <a href="/wut/">WUT?!</a>
     </nav>
 		<h1>What is this</h1>
+		<h3 class="skillz">Favorite Programming languages 💩</h3>
+		<ul>
+			{languages.map(lang => <li>{lang}</li>)}
+		</ul>
+		{zero && <p>I'll never see the light of day</p>}
 	</body>
 </html>
